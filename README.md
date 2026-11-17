@@ -52,10 +52,12 @@ backend-test/
 ## 4. 快速开始
 
 ```bash
-# 需要 JDK 17+
-mvn spring-boot:run
+# 只需要 JDK 17+；仓库自带 Maven Wrapper，无需预装 Maven
+./mvnw spring-boot:run      # Windows: mvnw.cmd spring-boot:run
 # 默认监听 http://localhost:8080
 ```
+
+若已装 Maven，`mvn spring-boot:run` 等价。
 
 打包运行：
 

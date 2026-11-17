@@ -9,7 +9,7 @@ server:
 app:
   jwt:
     # Base64-encoded HS256 secret. Override in production via APP_JWT_SECRET.
-    secret: ${APP_JWT_SECRET:V3V3ZWktYmFja2VuZC10ZXN0LWp3dC1zZWNyZXQta2V5LTIwMjYtMTItMzE=}
+    secret: ${APP_JWT_SECRET:d3V3ZWktYmFja2VuZC10ZXN0LWp3dC1zZWNyZXQta2V5LTIwMjYtMTItMzE=}
     expiration-seconds: 3600
     issuer: wuwei-backend-test
 
