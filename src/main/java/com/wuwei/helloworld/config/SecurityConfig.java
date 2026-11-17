@@ -3,6 +3,7 @@ package com.wuwei.helloworld.config;
 import com.wuwei.helloworld.security.JwtAuthenticationFilter;
 import com.wuwei.helloworld.security.RestAccessDeniedHandler;
 import com.wuwei.helloworld.security.RestAuthenticationEntryPoint;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -60,6 +61,17 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+
+    /**
+     * The JWT filter is a bean, so Spring Boot would also register it with the servlet container;
+     * it must only run inside the security filter chain.
+     */
+    @Bean
+    public FilterRegistrationBean<JwtAuthenticationFilter> jwtFilterRegistration(JwtAuthenticationFilter filter) {
+        FilterRegistrationBean<JwtAuthenticationFilter> registration = new FilterRegistrationBean<>(filter);
+        registration.setEnabled(false);
+        return registration;
     }
 
     @Bean

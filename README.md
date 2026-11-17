@@ -27,7 +27,7 @@
 ## 3. 目录结构
 
 ```
-backend-test/
+springboot-helloworld/
 ├── pom.xml
 ├── Dockerfile
 ├── api.http                     # IDEA / VS Code REST Client 可直接点开调试
@@ -111,7 +111,7 @@ Authorization: Bearer <accessToken>
 
 ## 6. 命令行验证（复制即用）
 
-PowerShell / bash 通用：
+bash（Linux / macOS / Git Bash）：
 
 ```bash
 # 1) 未认证调用，应返回 401
